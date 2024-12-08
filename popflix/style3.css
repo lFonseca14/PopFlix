@@ -1,0 +1,213 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #333;
+}
+
+/* Atualizando apenas a seção relevante para o cabeçalho */
+header {
+    display: flex; /* Alinha os itens horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: space-between; /* Espaça os itens */
+    padding: 10px 20px;
+    background-color: #333;
+    color: #ff9800;
+}
+
+header .logo {
+    display: flex; /* Permite alinhar logo e texto */
+    align-items: center;
+}
+
+header .logo img {
+    width: 90px;
+    height: 90px;
+    margin-right: 10px;
+}
+
+header h1 {
+    flex: 1; /* Ocupar espaço central */
+    text-align: center; /* Centraliza o texto no espaço */
+    font-size: 24px;
+    margin: 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: flex-end; /* Alinha o botão à direita */
+}
+
+nav .inicio-btn {
+    background-color: #ff9800; /* Cor do botão */
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+nav .inicio-btn:hover {
+    background-color: #666; /* Cor ao passar o mouse */
+}
+
+
+.info-gerais {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+    background-color: #333;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.imagem-serie img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.detalhes-serie {
+    flex-grow: 1;
+}
+
+.detalhes-serie h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #ff9800;
+}
+
+.detalhes-serie p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.detalhes-serie ul {
+    list-style: none;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.detalhes-serie ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.btn-favoritar {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-favoritar:hover {
+    background-color: #e68900;
+}
+
+
+.elenco {
+    padding: 30px;
+    background-color: #333;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.elenco h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ff9800;
+}
+
+.grid-elenco {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    color: #ff9800;
+}
+
+.membro-elenco {
+    text-align: center;
+    color: #ff9800;
+}
+
+.membro-elenco img {
+    width: 30%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.membro-elenco p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.temporadas {
+    padding: 40px;
+    background-color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.temporadas h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ff9800;
+}
+
+.lista-temporadas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    color: white;
+}
+
+.temporada h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ff9800;
+}
+
+.temporada p {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+
+@media (max-width: 768px) {
+    .info-gerais {
+        flex-direction: column;
+    }
+
+    .imagem-serie img {
+        width: 100%;
+        height: auto;
+    }
+
+    .grid-elenco {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .lista-temporadas {
+        grid-template-columns: 1fr;
+    }
+}

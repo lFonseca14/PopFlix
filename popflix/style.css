@@ -1,0 +1,473 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+}
+
+
+header {
+    position: relative; /* Define o cabeçalho como referência para o posicionamento do título */
+    display: flex;
+    align-items: center; /* Alinha verticalmente o conteúdo do cabeçalho */
+    padding: 30px;
+    background-color: #333;
+    color: #ff9800;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Move o logo para a esquerda */
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    position: absolute; /* Permite posicionar o título no centro */
+    top: 50%; /* Move o título para o meio vertical */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta o alinhamento exato */
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    color: #ff9800; /* Cor do título */
+}
+
+nav {
+    display: flex;
+    gap: 15px; /* Espaçamento entre os botões */
+}
+
+
+nav .inicio-btn {
+    background-color: #ff9800; /* Cor do botão "Início" */
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px; /* Espaço entre os botões */
+    transition: background-color 0.3s ease;
+}
+
+nav .inicio-btn:hover {
+    background-color: #666; /* Cor ao passar o mouse */
+}
+
+
+nav {
+    text-align: right;
+}
+
+nav .explorador-btn {
+    background-color: #ff9800;
+    color:#333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+nav .explorador-btn:hover {
+    background-color: #666; /* Cor ao passar o mouse */
+}
+
+
+#recentes {
+    font-family: 'Roboto', sans-serif; /* Define a fonte para a seção */
+    color: #ff9800; /* Define a cor da fonte */
+    text-align: center; /* Centraliza o texto */
+}
+
+#recentes h2 {
+    font-size: 32px; /* Aumenta o tamanho do título */
+    font-weight: bold; /* Destaca o título */
+    margin-bottom: 20px; /* Adiciona espaçamento abaixo do título */
+    color: #e67e22; /* Personaliza a cor do título */
+}
+
+#recentes p {
+    font-size: 18px; /* Define o tamanho do texto dos parágrafos */
+    line-height: 1.6; /* Melhora a legibilidade com espaçamento entre linhas */
+    color: #fff; /* Personaliza a cor dos parágrafos */
+}
+
+/* Estilização da seção "Sobre Mim" */
+#sobre {
+    font-family: 'Roboto', sans-serif; /* Define a fonte */
+    color: #ff9800; /* Cor padrão para o texto */
+    background-color: #222; /* Fundo escuro para destaque */
+    padding: 40px;
+    text-align: left;
+    border-radius: 10px; /* Bordas arredondadas para suavidade */
+}
+
+#sobre h2 {
+    font-size: 32px; /* Tamanho do título */
+    font-weight: bold; /* Destaca o título */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    color: #e67e22; /* Cor personalizada do título */
+}
+
+#sobre p {
+    font-size: 18px; /* Tamanho do texto do parágrafo */
+    line-height: 1.6; /* Espaçamento entre linhas para legibilidade */
+    color: #fff; /* Cor branca para contraste */
+}
+
+/* Estilização da seção "Minhas Séries Favoritas" */
+#favoritas {
+    font-family: 'Roboto', sans-serif; /* Fonte personalizada */
+    color: #ff9800; /* Cor padrão para o texto */
+    padding: 40px;
+    text-align: center;
+}
+
+#favoritas h2 {
+    font-size: 32px; /* Tamanho do título */
+    font-weight: bold; /* Destaca o título */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    color: #e67e22; /* Cor do título */
+}
+
+#favoritas .card h3 {
+    font-size: 20px; /* Tamanho do título das séries */
+    color: #ff9800; /* Cor para combinar com o tema */
+}
+
+#favoritas .card p {
+    font-size: 16px; /* Tamanho do texto das descrições */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    color: #fff; /* Cor branca para contraste */
+}
+
+/* Botão "Ver Mais" estilizado */
+.btn-ver-mais {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-ver-mais:hover {
+    background-color: #e68900; /* Cor ao passar o mouse */
+}
+
+
+section {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+
+.slider {
+    position: relative;
+    background-color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.slider-container {
+    display: flex;
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#slide1:checked ~ .slider-wrapper {
+    transform: translateX(10%);
+}
+
+#slide2:checked ~ .slider-wrapper {
+    transform: translateX(-36.33%);
+}
+
+#slide3:checked ~ .slider-wrapper {
+    transform: translateX(-100.66%);
+
+}
+.slide {
+    min-width: 65%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slide img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slide:hover img {
+    transform: scale(1.05); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.slide:hover {
+    transform: translateY(-10px); 
+}
+
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.nav-buttons label {
+    background-color: rgba(51, 51, 51, 0.7);
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-buttons label:hover {
+    background-color: #ff9800;
+}
+
+.nav-buttons label::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+}
+
+.nav-buttons .prev::before {
+    transform: rotate(-135deg);
+}
+
+.nav-buttons .next::before {
+    transform: rotate(45deg);
+}
+
+
+.slider-indicators {
+    position: absolute;
+    bottom: 10px; /* Mantém os indicadores próximos à parte inferior */
+    left: 50%; /* Centraliza horizontalmente em relação ao slider */
+    transform: translateX(-50%); /* Compensa o deslocamento para alinhar ao centro */
+    display: flex;
+    gap: 10px; /* Espaçamento entre os indicadores */
+}
+
+
+.slider-indicators label {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+input[type="radio"]:checked ~ .slider-indicators label[for="slide1"] {
+    background-color: #ff9800;
+}
+
+input[type="radio"]:checked ~ .slider-indicators label[for="slide2"] {
+    background-color: #ff9800;
+}
+
+input[type="radio"]:checked ~ .slider-indicators label[for="slide3"] {
+    background-color: #ff9800;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.card:hover img {
+    transform: scale(1.05); 
+}
+
+
+.instagram-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #E1306C;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    .slider-wrapper {
+        flex-direction: column;
+    }
+
+    .nav-buttons label {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .slide img {
+        width: 300px; 
+        height: 180px; 
+    }
+}
+
+
+.slide img {
+    width: 550px; 
+    height: 300px; 
+    object-fit: cover; 
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.slide:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    color: #ff9800;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.btn-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.card:hover .btn-overlay {
+    opacity: 1; 
+}
+
+.btn-ver-mais {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-ver-mais:hover {
+    background-color: #e68900;
+}
+
+
+.card:hover img {
+    transform: scale(1.05); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+}
+
+
